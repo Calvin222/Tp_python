@@ -32,9 +32,9 @@ class Game():
     guerrier = Guerrier()
     sorcier = Sorcier()
     def launch(self):
-        # Boucle du jeu
-        while (Game.guerrier.pv > 0) and (Game.sorcier.pv > 0):
+        # Boucle du jeu 
             # Tour Guerrier
+        while (Game.guerrier.pv > 0) and (Game.sorcier.pv > 0):
             print("Début du tour du guerrier")
             result = random.randint(1, 5)
             if (result == 1):
@@ -43,22 +43,19 @@ class Game():
                 print("Le Guerrier n'a plus que :", Game.guerrier.pv, "points de vie")
             else:
                 Game.sorcier.pv = Game.sorcier.pv - Game.guerrier.DegatsGuerrier()
-                print("Le Guerrier attaque le Sorcier et lui inflige", 
-                Game.guerrier.DegatsGuerrier())
+                print("Le Guerrier inflige", Game.guerrier.DegatsGuerrier(),"points de dégats au Sorcier !")
                 print("Le Sorcier n'a plus que :", Game.sorcier.pv, "points de vie")
             time.sleep(1)
             print("\n")
-
+            
+            # Tour du Sorcier
             if (Game.guerrier.pv > 0) and (Game.sorcier.pv > 0):
-                # Tour Sorcier
-                print("Début du tour du Sorcier")
                 result1 = random.randint(1, 2)
                 if (result1 == 1):
                     if (Game.sorcier.NbrPotion > 0):
                         Game.sorcier.BoisPotion()
-                        print("Le sorcier boit une potion et gagne : 15 PV, il lui reste ", Game.sorcier.NbrPotion, "potion")
-                        print("Le Sorcier à encore :", Game.sorcier.pv, "points de vie")
-                Game.guerrier.pv = Game.guerrier.pv - Game.sorcier.DegatsSorcier()
+                        print("Le sorcier arrive à boire une potion, il va lui rester ", Game.sorcier.NbrPotion, "potion")
+                        print("Le Sorcier à encore :", Game.sorcier.pv, "points de vie") Game.guerrier.pv = Game.guerrier.pv - Game.sorcier.DegatsSorcier()
                 print("Le Sorcier inflige", Game.sorcier.DegatsSorcier(),"points de dégats au Guerrier !")
                 print("Le Guerrier n'a plus que :", Game.guerrier.pv, "points de vie")
                 time.sleep(1)
