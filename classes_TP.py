@@ -29,6 +29,9 @@ class Guerrier():
 
 #Démarage du combat
 class Game():
+#     classe Game() :  #et on initialise le score du gerrier et du sorcier à 0.
+#     scoresorcier = 0
+#     scoreguerrier = 0
     guerrier = Guerrier()
     sorcier = Sorcier()
     def launch(self):
@@ -60,4 +63,19 @@ class Game():
                 print("Le Guerrier n'a plus que :", Game.guerrier.pv, "points de vie")
                 time.sleep(1)
                 print("\n")
-
+                
+# # Calcule du score
+        # if (Game.guerrier.pv <= 0):
+        #     Game.scoreguerrier = Game.scoreguerrier + 1
+        #     print("Le Guerrier meurt de ses blessures")
+        #     print("Le Sorcier gagne le combat.")
+        #     print("Victoire guerrier : ", Game.scoreguerrier)
+        #     print("Victoire Sorcier : ", Game.scoresorcier)
+        # elif (Game.sorcier.pv <= 0):
+        #     Game.scoresorcier = Game.scoresorcier + 1
+        #     print("Le Sorcier meurt de ses blessures")
+        #     print("Le Guerrier gagne le combat.")
+        #     print("Victoire guerrier : ", Game.scoreguerrier)
+        #     print("Victoire Sorcier : ", Game.scoresorcier)
+        # Game.guerrier = Guerrier()
+        # Game.sorcier = Sorcier()
